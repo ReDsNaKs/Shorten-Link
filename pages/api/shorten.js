@@ -1,5 +1,5 @@
 import { supabase } from "@supabase/supabase-js";
-import { nanoid } from "nanoid"; // ← importar nanoid
+import { nanoid } from "nanoid";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -13,7 +13,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const slug = nanoid(6); // ← ID corto de 6 caracteres únicos
+    const slug = nanoid(6);
 
     const { error } = await supabase.from("Links").insert([
       {
